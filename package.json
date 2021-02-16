@@ -1,0 +1,16 @@
+{
+  "name": "eslint-config-fio",
+  "license": "ISC",
+  "description": "",
+  "homepage": "https://github.com/fio-one/eslint-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fio-one/eslint-config.git"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}
