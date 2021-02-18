@@ -1,0 +1,30 @@
+{
+  "name": "@fio-one/eslint-config-airbnb",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [],
+  "author": "wiasliaw <wiasliaw@fio.one>",
+  "license": "ISC",
+  "main": ".eslintrc.json",
+  "files": [
+    ".eslintrc.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fio-one/eslint-config.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/fio-one/eslint-config/issues"
+  },
+  "homepage": "https://github.com/fio-one/eslint-config#readme",
+  "dependencies": {
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  },
+  "peerDependencies": {
+    "eslint": "^7.20.0"
+  }
+}

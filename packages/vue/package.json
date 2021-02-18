@@ -1,0 +1,29 @@
+{
+  "name": "@fio-one/eslint-config-vue",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [],
+  "author": "wiasliaw <wiasliaw@fio.one>",
+  "license": "ISC",
+  "main": ".eslintrc.json",
+  "files": [
+    ".eslintrc.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fio-one/eslint-config.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/fio-one/eslint-config/issues"
+  },
+  "homepage": "https://github.com/fio-one/eslint-config#readme",
+  "dependencies": {
+    "eslint-plugin-vue": "^7.6.0"
+  },
+  "peerDependencies": {
+    "eslint": "^7.20.0"
+  }
+}
