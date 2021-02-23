@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - hotfix
+      - "features/**"
+    pull_request:
+      branches:
+        - main
+        - develop
+
+jobs:
+  installation:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+
+      - name: Install manager tool
+        run: npm i -g lerna
+
+      - name: Install npm package
+        run: lerna bootstrap
