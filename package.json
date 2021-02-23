@@ -10,6 +10,12 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "publish:latest": "lerna publish --positional=patch --no-git-reset --yes",
+    "publish:stable":"lerna publish --positional=patch --no-git-reset --yes",
+    "publish:canary":"lerna publish --positional=patch --no-git-reset --yes"
+  },
   "devDependencies": {
     "lerna": "^3.22.1"
   }
