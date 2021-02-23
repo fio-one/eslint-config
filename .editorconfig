@@ -9,3 +9,6 @@ insert_final_newline = true
 
 [*.json]
 tab_width = 2
+
+[*.yml]
+tab_width = 2
