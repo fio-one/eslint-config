@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-fio",
-  "license": "ISC",
+  "license": "MIT",
   "description": "",
   "homepage": "https://github.com/fio-one/eslint-config#readme",
   "repository": {

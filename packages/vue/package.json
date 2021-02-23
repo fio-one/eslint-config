@@ -4,7 +4,7 @@
   "description": "",
   "keywords": [],
   "author": "wiasliaw <wiasliaw@fio.one>",
-  "license": "ISC",
+  "license": "MIT",
   "main": ".eslintrc.json",
   "files": [
     ".eslintrc.json"
