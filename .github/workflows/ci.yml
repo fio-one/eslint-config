@@ -39,10 +39,10 @@ jobs:
       - name: Release package@next
         if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
         run: |
-          npm run publish -- --positional=patch --dist-tag=next --no-git-reset --yes
+          npm run publish -- patch --dist-tag=next --no-git-reset --yes
 
       - name: Release package@latest
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
-          npm run publish -- --positional=major --dist-tag=latest --no-git-reset --yes
+          npm run publish -- major --dist-tag=latest --no-git-reset --yes
 
