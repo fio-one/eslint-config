@@ -7,10 +7,10 @@ on:
       - develop
       - hotfix
       - "features/**"
-    pull_request:
-      branches:
-        - main
-        - develop
+  pull_request:
+    branches:
+      - main
+      - develop
 
 jobs:
   installation:
@@ -28,8 +28,13 @@ jobs:
         with:
           node-version: 10
 
-      - name: Install manager tool
-        run: npm i -g lerna
+      - name: Install manager tool & npm package
+        run: |
+          npm i -g lerna
+          npm run bootstrap -- --no-ci
 
-      - name: Install npm package
-        run: lerna bootstrap --no-ci
+      - name: Release package
+        if: github.event.pull_request.merged == true && github.ref == 'refs/heads/develop'
+        env:
+          CTX: ${{ toJSON(github) }}
+        run: echo "$CTX"
