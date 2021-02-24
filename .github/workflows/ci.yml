@@ -33,6 +33,11 @@ jobs:
           npm i -g lerna
           npm run bootstrap -- --no-ci
 
+      - name: Log context
+        env:
+          CTX: ${{ toJSON(github) }}
+        run: echo "$CTX"
+
       - name: Release package
         if: github.event.pull_request.merged == true && github.ref == 'refs/heads/develop'
         env:
