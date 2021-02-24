@@ -13,8 +13,11 @@ on:
       - develop
 
 jobs:
-  installation:
+  deployment:
     runs-on: ubuntu-latest
+
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     strategy:
       fail-fast: false
@@ -33,13 +36,13 @@ jobs:
           npm i -g lerna
           npm run bootstrap -- --no-ci
 
-      - name: Log context
-        env:
-          CTX: ${{ toJSON(github) }}
-        run: echo "$CTX"
+      - name: Release package@next
+        if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+        run: |
+          npm run publish -- --positional=patch --dist-tag=next --no-git-reset --yes
 
-      - name: Release package
-        if: github.event.pull_request.merged == true && github.ref == 'refs/heads/develop'
-        env:
-          CTX: ${{ toJSON(github) }}
-        run: echo "$CTX"
+      - name: Release package@latest
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          npm run publish -- --positional=major --dist-tag=latest --no-git-reset --yes
+
